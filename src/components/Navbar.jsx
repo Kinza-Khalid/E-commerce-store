@@ -4,7 +4,7 @@ import './Navbar.css'
 export default function Navbar() {
   return (
     <nav>
-      <div className="nav-logo">🛍️ ShopEase</div>
+      <div className="nav-logo">Luxe & Co.</div>
       <div className="nav-links">
         <Link to="/">Home</Link>
         <Link to="/cart">Cart</Link>

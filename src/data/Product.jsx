@@ -4,7 +4,7 @@ const products = [
     name: "Wireless Headphones",
     price: 2999,
     category: "Electronics",
-    image: "headphones.jpg",
+    image: "/headphones-pexel.jpg",
     description: "High quality wireless headphones with noise cancellation.",
     rating: 4.5,
     stock: 10
@@ -14,7 +14,7 @@ const products = [
     name: "Men's Casual Shirt",
     price: 1499,
     category: "Clothing",
-    image: "menshirt.jpg",
+    image: "/shirts-pexels.jpg",
     description: "Comfortable cotton casual shirt for everyday wear.",
     rating: 4.2,
     stock: 25
@@ -24,7 +24,7 @@ const products = [
     name: "Smart Watch",
     price: 4999,
     category: "Electronics",
-    image: "smartwatch.jpg",
+    image: "/smartwatch-pexels.jpg",
     description: "Feature-rich smartwatch with health tracking.",
     rating: 4.7,
     stock: 8
@@ -34,7 +34,7 @@ const products = [
     name: "Women's Handbag",
     price: 2499,
     category: "Accessories",
-    image: "handbags.jpg",
+    image: "/pexel-handbag.jpg",
     description: "Stylish leather handbag for women.",
     rating: 4.3,
     stock: 15
@@ -44,17 +44,17 @@ const products = [
     name: "Running Shoes",
     price: 3499,
     category: "Footwear",
-    image: "shoes.jpg",
+    image: "/shoes-pexels.jpg",
     description: "Lightweight and comfortable running shoes.",
     rating: 4.6,
     stock: 20
   },
   {
     id: 6,
-    name: "Laptop Backpack",
+    name: "Leather Backpack",
     price: 1999,
     category: "Accessories",
-    image: "laptopbag.jpg",
+    image: "/pexels-backpack.jpg",
     description: "Spacious backpack with laptop compartment.",
     rating: 4.4,
     stock: 12
@@ -64,17 +64,17 @@ const products = [
     name: "Bluetooth Speaker",
     price: 1799,
     category: "Electronics",
-    image: "bluetoothspeaker.jpg",
+    image: "/pexel-speaker.jpg",
     description: "Portable bluetooth speaker with deep bass.",
     rating: 4.1,
     stock: 18
   },
   {
     id: 8,
-    name: "Women's Dress",
+    name: "Women's Essentials",
     price: 2199,
     category: "Clothing",
-    image: "dress.jpg",
+    image: "/women-collection.jpg",
     description: "Elegant floral dress for special occasions.",
     rating: 4.8,
     stock: 10
