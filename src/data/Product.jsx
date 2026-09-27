@@ -78,7 +78,88 @@ const products = [
     description: "Elegant floral dress for special occasions.",
     rating: 4.8,
     stock: 10
-  }
+  },
+
+    {
+    id: 9,
+    name: "Sunglasses",
+    price: 1299,
+    category: "Accessories",
+    image: "public/pexels-sunglasses.jpg",
+    description: "Stylish UV protection sunglasses.",
+    rating: 4.3,
+    stock: 20
+  },
+  {
+    id: 10,
+    name: "Perfume",
+    price: 3999,
+    category: "Beauty",
+    image: "public/pexels-perfume.jpg",
+    description: "Luxury long-lasting fragrance.",
+    rating: 4.7,
+    stock: 15
+  },
+  {
+    id: 11,
+    name: "Leather Wallet",
+    price: 899,
+    category: "Accessories",
+    image: "public/pexels-wallet.jpg",
+    description: "Slim genuine leather wallet.",
+    rating: 4.4,
+    stock: 30
+  },
+  {
+    id: 12,
+    name: "Laptop",
+    price: 89999,
+    category: "Electronics",
+    image: "public/pexels-laptop.jpg",
+    description: "High performance laptop for work and gaming.",
+    rating: 4.8,
+    stock: 5
+  },
+  {
+    id: 13,
+    name: "Women's Scarf",
+    price: 799,
+    category: "Clothing",
+    image: "public/pexels-scarf.jpg",
+    description: "Soft and elegant women's scarf.",
+    rating: 4.2,
+    stock: 25
+  },
+  {
+    id: 14,
+    name: "Mobile Phone",
+    price: 49999,
+    category: "Electronics",
+    image: "public/pexels-phone.jpg",
+    description: "Latest smartphone with amazing camera.",
+    rating: 4.6,
+    stock: 10
+  },
+  {
+    id: 15,
+    name: "Wrist Watch",
+    price: 5999,
+    category: "Accessories",
+    image: "public/pexels-watch.jpg",
+    description: "Classic analog wrist watch for men.",
+    rating: 4.5,
+    stock: 12
+  },
+  {
+    id: 16,
+    name: "Face Serum",
+    price: 1599,
+    category: "Beauty",
+    image: "/pexels-cream.jpg",
+    description: "Premium moisturizing face cream.",
+    rating: 4.3,
+    stock: 20
+  },
 ]
 
 export default products
