@@ -1,0 +1,67 @@
+.orders-container {
+  padding: 40px 60px;
+  background-color: #f5f0eb;
+  min-height: 100vh;
+}
+
+.orders-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  color: #3d2b1f;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.order-card {
+  background: white;
+  border-radius: 15px;
+  padding: 25px 30px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 20px rgba(61,43,31,0.1);
+  border-left: 4px solid #6b4226;
+  max-width: 800px;
+  margin: 0 auto 20px auto;
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.order-header h3 {
+  font-family: 'Playfair Display', serif;
+  color: #3d2b1f;
+  font-size: 20px;
+}
+
+.order-status {
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.order-status.delivered {
+  background: #d4edda;
+  color: #155724;
+}
+
+.order-status.processing {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.order-status.shipped {
+  background: #cce5ff;
+  color: #004085;
+}
+
+.order-body p {
+  color: #8b7355;
+  font-size: 14px;
+  margin-bottom: 8px;
+  font-family: 'Poppins', sans-serif;
+}
