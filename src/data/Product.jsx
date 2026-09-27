@@ -74,7 +74,7 @@ const products = [
     name: "Floral Print Dress",
     price: 2199,
     category: "Clothing",
-    image: "floral-dres.jpg",
+    image: "/women-dress.jpg",
     description: "Elegant floral dress for special occasions.",
     rating: 4.8,
     stock: 10
@@ -85,7 +85,7 @@ const products = [
     name: "Sunglasses",
     price: 1299,
     category: "Accessories",
-    image: "public/pexels-sunglasses.jpg",
+    image: "/pexels-sunglasses.jpg",
     description: "Stylish UV protection sunglasses.",
     rating: 4.3,
     stock: 20
@@ -95,7 +95,7 @@ const products = [
     name: "Perfume",
     price: 3999,
     category: "Beauty",
-    image: "public/pexels-perfume.jpg",
+    image: "/pexels-perfume.jpg",
     description: "Luxury long-lasting fragrance.",
     rating: 4.7,
     stock: 15
@@ -105,7 +105,7 @@ const products = [
     name: "Leather Wallet",
     price: 899,
     category: "Accessories",
-    image: "public/pexels-wallet.jpg",
+    image: "/pexels-wallet.jpg",
     description: "Slim genuine leather wallet.",
     rating: 4.4,
     stock: 30
@@ -115,7 +115,7 @@ const products = [
     name: "Laptop",
     price: 89999,
     category: "Electronics",
-    image: "public/pexels-laptop.jpg",
+    image: "/pexels-laptop.jpg",
     description: "High performance laptop for work and gaming.",
     rating: 4.8,
     stock: 5
@@ -125,7 +125,7 @@ const products = [
     name: "Women's Scarf",
     price: 799,
     category: "Clothing",
-    image: "public/pexels-scarf.jpg",
+    image: "/pexels-scarf.jpg",
     description: "Soft and elegant women's scarf.",
     rating: 4.2,
     stock: 25
@@ -135,7 +135,7 @@ const products = [
     name: "Mobile Phone",
     price: 49999,
     category: "Electronics",
-    image: "public/pexels-phone.jpg",
+    image: "/pexels-phone.jpg",
     description: "Latest smartphone with amazing camera.",
     rating: 4.6,
     stock: 10
@@ -145,7 +145,7 @@ const products = [
     name: "Wrist Watch",
     price: 5999,
     category: "Accessories",
-    image: "public/pexels-watch.jpg",
+    image: "/pexels-watch.jpg",
     description: "Classic analog wrist watch for men.",
     rating: 4.5,
     stock: 12
