@@ -71,10 +71,10 @@ const products = [
   },
   {
     id: 8,
-    name: "Women's Essentials",
+    name: "Floral Print Dress",
     price: 2199,
     category: "Clothing",
-    image: "/women-collection.jpg",
+    image: "floral-dres.jpg",
     description: "Elegant floral dress for special occasions.",
     rating: 4.8,
     stock: 10

@@ -147,3 +147,27 @@
 .product-card:hover img {
   transform: scale(1.03);
 }
+
+.card-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.btn-details {
+  background: transparent;
+  color: #6b4226;
+  border: 1.5px solid #6b4226;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  width: 100%;
+  transition: all 0.3s;
+}
+
+.btn-details:hover {
+  background: #6b4226;
+  color: white;
+}

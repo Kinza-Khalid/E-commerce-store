@@ -1,0 +1,87 @@
+.detail-container {
+  padding: 40px 60px;
+  background-color: #f5f0eb;
+  min-height: 100vh;
+}
+
+.detail-card {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  display: flex;
+  gap: 60px;
+  box-shadow: 0 10px 40px rgba(61,43,31,0.1);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.detail-image {
+  flex: 1;
+}
+
+.detail-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.detail-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.detail-category {
+  color: #8b7355;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.detail-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  color: #3d2b1f;
+}
+
+.detail-rating {
+  color: #c9942a;
+  font-size: 16px;
+}
+
+.detail-price {
+  font-size: 28px;
+  font-weight: 700;
+  color: #6b4226;
+}
+
+.detail-description {
+  color: #8b7355;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.detail-stock {
+  font-size: 14px;
+  color: #3d2b1f;
+}
+
+.detail-btn {
+  background: linear-gradient(135deg, #6b4226, #3d2b1f);
+  color: #f5e6d3;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: opacity 0.3s;
+  margin-top: 10px;
+}
+
+.detail-btn:hover {
+  opacity: 0.88;
+}
