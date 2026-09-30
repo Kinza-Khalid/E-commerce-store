@@ -9,5 +9,5 @@ A full-stack e-commerce application built with React,Javascript,Node.js, Express
 - Order tracking and management
 
 ## Project Structure
-- `src/` — React frontend built with Vite
+- `src/` — React frontend built with Javascript
 - `server/` — Express backend API with MongoDB models
