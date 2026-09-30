@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useCart } from '../context/CartContext'
+import { API_URL } from '../api'
 import './ProductDetail.css'
 
 function ProductDetail() {
@@ -10,7 +11,7 @@ function ProductDetail() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/products/${id}`)
+    fetch(`${API_URL}/api/products/${id}`)
       .then(res => res.json())
       .then(data => {
         setProduct(data)

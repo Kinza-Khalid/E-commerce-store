@@ -2,13 +2,14 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import './Home.css'
 import { useCart } from '../context/CartContext'
+import { API_URL } from '../api'
 
 function Home() {
   const { addToCart } = useCart()
   const [products, setProducts] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/products')
+    fetch(`${API_URL}/api/products`)
       .then(res => res.json())
       .then(data => setProducts(data))
       .catch(err => console.log('Error fetching products:', err))

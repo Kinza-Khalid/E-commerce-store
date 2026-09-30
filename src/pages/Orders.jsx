@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { API_URL } from '../api'
 import './Orders.css'
 
 function Orders() {
@@ -15,7 +16,7 @@ function Orders() {
       return
     }
 
-    fetch('http://localhost:5000/api/orders', {
+    fetch(`${API_URL}/api/orders`, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(res => res.json())
