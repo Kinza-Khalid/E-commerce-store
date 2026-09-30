@@ -1,6 +1,6 @@
 # E-commerce Store
 
-A full-stack e-commerce application built with React, Vite, Node.js, Express, and MongoDB.
+A full-stack e-commerce application built with React,Javascript,Node.js, Express, and MongoDB.
 
 ## Features
 - Product catalog & product details
