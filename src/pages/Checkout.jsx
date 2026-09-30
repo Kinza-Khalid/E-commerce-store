@@ -1,5 +1,6 @@
 import { useCart } from '../context/CartContext'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import './Checkout.css'
 
 function Checkout() {
@@ -8,11 +9,58 @@ function Checkout() {
   const [address, setAddress] = useState('')
   const [phone, setPhone] = useState('')
   const [ordered, setOrdered] = useState(false)
+  const [error, setError] = useState('')
+  const [loading, setLoading] = useState(false)
+  const navigate = useNavigate()
 
-  const handleOrder = (e) => {
+  const handleOrder = async (e) => {
     e.preventDefault()
-    setOrdered(true)
-    clearCart()
+    setError('')
+
+    const token = localStorage.getItem('token')
+    if (!token) {
+      setError('Please login first to place an order.')
+      navigate('/login')
+      return
+    }
+
+    setLoading(true)
+
+    try {
+      const res = await fetch('http://localhost:5000/api/orders', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`
+        },
+        body: JSON.stringify({
+          items: cartItems.map(item => ({
+            name: item.name,
+            price: item.price,
+            quantity: item.quantity,
+            image: item.image
+          })),
+          totalPrice: cartTotal,
+          name,
+          phone,
+          address
+        })
+      })
+
+      const data = await res.json()
+
+      if (!res.ok) {
+        setError(data.message || 'Failed to place order')
+        setLoading(false)
+        return
+      }
+
+      setOrdered(true)
+      clearCart()
+    } catch (err) {
+      setError('Something went wrong. Try again.')
+      setLoading(false)
+    }
   }
 
   if (ordered) {
@@ -38,9 +86,9 @@ function Checkout() {
   return (
     <div className="checkout-container">
       <h1 className="checkout-title">Checkout</h1>
+      {error && <p className="auth-error">{error}</p>}
       <div className="checkout-layout">
 
-        {/* Order Summary */}
         <div className="order-summary">
           <h2>Order Summary</h2>
           {cartItems.map(item => (
@@ -62,7 +110,6 @@ function Checkout() {
           </div>
         </div>
 
-        {/* Delivery Form */}
         <div className="delivery-form">
           <h2>Delivery Details</h2>
           <form onSubmit={handleOrder}>
@@ -96,8 +143,8 @@ function Checkout() {
                 rows={4}
               />
             </div>
-            <button type="submit" className="place-order-btn">
-              Place Order
+            <button type="submit" className="place-order-btn" disabled={loading}>
+              {loading ? 'Placing Order...' : 'Place Order'}
             </button>
           </form>
         </div>

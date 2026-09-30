@@ -171,3 +171,21 @@
   background: #6b4226;
   color: white;
 }
+
+.btn-detail {
+  display: block;
+  text-align: center;
+  margin-top: 8px;
+  padding: 8px;
+  background-color: transparent;
+  border: 1px solid #8b5e3c;
+  color: #8b5e3c;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.btn-detail:hover {
+  background-color: #8b5e3c;
+  color: white;
+}

@@ -85,3 +85,9 @@
 .detail-btn:hover {
   opacity: 0.88;
 }
+
+.product-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}

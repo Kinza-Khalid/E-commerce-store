@@ -102,3 +102,9 @@
 .auth-link a:hover {
   text-decoration: underline;
 }
+
+.auth-error {
+  color: #d9534f;
+  text-align: center;
+  margin-bottom: 10px;
+}

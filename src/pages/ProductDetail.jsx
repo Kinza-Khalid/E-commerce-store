@@ -1,13 +1,30 @@
+import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useCart } from '../context/CartContext'
-import products from '../data/Product'
 import './ProductDetail.css'
 
 function ProductDetail() {
   const { id } = useParams()
   const { addToCart } = useCart()
-  
-  const product = products.find(p => p.id === parseInt(id))
+  const [product, setProduct] = useState(null)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/api/products/${id}`)
+      .then(res => res.json())
+      .then(data => {
+        setProduct(data)
+        setLoading(false)
+      })
+      .catch(err => {
+        console.log('Error fetching product:', err)
+        setLoading(false)
+      })
+  }, [id])
+
+  if (loading) {
+    return <div className="detail-container"><h1>Loading...</h1></div>
+  }
 
   if (!product) {
     return (

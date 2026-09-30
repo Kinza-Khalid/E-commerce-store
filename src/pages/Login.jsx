@@ -1,14 +1,43 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import './Login.css'
 
 function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [error, setError] = useState('')
+  const [loading, setLoading] = useState(false)
+  const navigate = useNavigate()
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log('Login:', email, password)
+    setError('')
+    setLoading(true)
+
+    try {
+      const res = await fetch('http://localhost:5000/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+      })
+
+      const data = await res.json()
+
+      if (!res.ok) {
+        setError(data.message || 'Login failed')
+        setLoading(false)
+        return
+      }
+
+      // Save token and user info
+      localStorage.setItem('token', data.token)
+      localStorage.setItem('user', JSON.stringify(data.user))
+
+      navigate('/')
+    } catch (err) {
+      setError('Something went wrong. Try again.')
+      setLoading(false)
+    }
   }
 
   return (
@@ -16,6 +45,8 @@ function Login() {
       <div className="auth-card">
         <h1 className="auth-title">Welcome Back</h1>
         <p className="auth-subtitle">Sign in to your Luxe & Co. account</p>
+
+        {error && <p className="auth-error">{error}</p>}
 
         <form onSubmit={handleSubmit}>
           <div className="form-group">
@@ -40,8 +71,8 @@ function Login() {
             />
           </div>
 
-          <button type="submit" className="auth-btn">
-            Sign In
+          <button type="submit" className="auth-btn" disabled={loading}>
+            {loading ? 'Signing In...' : 'Sign In'}
           </button>
         </form>
 

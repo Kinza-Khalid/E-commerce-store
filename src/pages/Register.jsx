@@ -1,15 +1,40 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import './Login.css'
 
 function Register() {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [error, setError] = useState('')
+  const [loading, setLoading] = useState(false)
+  const navigate = useNavigate()
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log('Register:', name, email, password)
+    setError('')
+    setLoading(true)
+
+    try {
+      const res = await fetch('http://localhost:5000/api/auth/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, password })
+      })
+
+      const data = await res.json()
+
+      if (!res.ok) {
+        setError(data.message || 'Registration failed')
+        setLoading(false)
+        return
+      }
+
+      navigate('/login')
+    } catch (err) {
+      setError('Something went wrong. Try again.')
+      setLoading(false)
+    }
   }
 
   return (
@@ -17,6 +42,9 @@ function Register() {
       <div className="auth-card">
         <h1 className="auth-title">Create Account</h1>
         <p className="auth-subtitle">Join Luxe & Co. today</p>
+
+        {error && <p className="auth-error">{error}</p>}
+
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label>Full Name</label>
@@ -48,10 +76,11 @@ function Register() {
               required
             />
           </div>
-          <button type="submit" className="auth-btn">
-            Create Account
+          <button type="submit" className="auth-btn" disabled={loading}>
+            {loading ? 'Creating Account...' : 'Create Account'}
           </button>
         </form>
+
         <p className="auth-link">
           Already have an account?{' '}
           <Link to="/login">Login here</Link>

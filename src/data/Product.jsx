@@ -77,7 +77,7 @@ const products = [
     image: "/women-dress.jpg",
     description: "Elegant floral dress for special occasions.",
     rating: 4.8,
-    stock: 10
+    stock: 14
   },
 
     {
