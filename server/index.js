@@ -2,7 +2,7 @@ import express from 'express'
 import mongoose from 'mongoose'
 import cors from 'cors'
 import dotenv from 'dotenv'
-import productRoutes from './routes/productRoutes.js'
+import productRoutes from './routes/productroutes.js'
 import authRoutes from './routes/authRoutes.js'
 import orderRoutes from './routes/orderroutes.js'
 
