@@ -189,3 +189,9 @@
   background-color: #8b5e3c;
   color: white;
 }
+
+.hero-section {
+  background: linear-gradient(rgba(61,43,31,0.6), rgba(61,43,31,0.6)),
+    url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1400') 
+    center/cover no-repeat;
+}
