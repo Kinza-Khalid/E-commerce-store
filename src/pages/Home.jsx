@@ -24,8 +24,8 @@ function Home() {
     <div className="home-container">
       <div className="hero-section">
         <div className="hero-content">
-          <h1>Future-Ready Fashion</h1>
-          <p>Discover premium products curated just for you</p>
+          <h1>Everything You Need, All in One Place</h1>
+<p>From fashion to electronics, discover premium products curated just for you</p>
           <button className="hero-btn" onClick={scrollToProducts}>
             Shop Now
           </button>
