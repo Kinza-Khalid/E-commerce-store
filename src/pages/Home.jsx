@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import './Home.css'
 import { useCart } from '../context/CartContext'
@@ -7,6 +7,7 @@ import { API_URL } from '../api'
 function Home() {
   const { addToCart } = useCart()
   const [products, setProducts] = useState([])
+  const productsRef = useRef(null)
 
   useEffect(() => {
     fetch(`${API_URL}/api/products`)
@@ -15,17 +16,23 @@ function Home() {
       .catch(err => console.log('Error fetching products:', err))
   }, [])
 
+  const scrollToProducts = () => {
+    productsRef.current?.scrollIntoView({ behavior: 'smooth' })
+  }
+
   return (
     <div className="home-container">
       <div className="hero-section">
         <div className="hero-content">
           <h1>Future-Ready Fashion</h1>
           <p>Discover premium products curated just for you</p>
-          <button className="hero-btn">Shop Now</button>
+          <button className="hero-btn" onClick={scrollToProducts}>
+            Shop Now
+          </button>
         </div>
       </div>
 
-      <h2 className="home-title">Our Products</h2>
+      <h2 className="home-title" ref={productsRef}>Our Products</h2>
       <div className="products-grid">
         {products.map(product => (
           <div key={product._id} className="product-card">

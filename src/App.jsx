@@ -7,6 +7,7 @@ import Checkout from './pages/Checkout'
 import Orders from './pages/Orders'
 import ProductDetail from './pages/ProductDetail' 
 import Navbar from './components/Navbar'
+import Footer from './components/footer'
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
         <Route path="/orders" element={<Orders />} />
         <Route path="/product/:id" element={<ProductDetail />} />
       </Routes>
-      </div>
+      <Footer />
+    </div>
   )
 }
 
